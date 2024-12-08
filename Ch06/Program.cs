@@ -27,8 +27,9 @@ public class Program
 
         var board = content.Select(x => x.ToArray()).ToArray();
             
-        new P1(position, CopyJaggedArray(board)).Run();
-        new P2(position, CopyJaggedArray(board)).Run();
+        var locations = new P1(position, CopyJaggedArray(board)).Run();
+        //P2 does not currently give the correct answer. It includes some false positives.
+        new P2(position, CopyJaggedArray(board)).Run(locations);
     }
 
     public static char[][] CopyJaggedArray(char[][] source)
@@ -75,9 +76,9 @@ public struct Vector
 
 public struct LocationInfo
 {
-    int x;
-    int y;
-    int dir;
+    public int x;
+    public int y;
+    public int dir;
 
     public LocationInfo(int x, int y, int dir)
     {

@@ -48,44 +48,49 @@
         };
     }
 
-    public void Run()
+    public void Run(List<LocationInfo> locations)
     {
-        for (var i = 0; i < originalBoard.Length; i++)
+        foreach (var location in locations)
         {
-            for (int j = 0; j < originalBoard[0].Length; j++)
+            var i = location.y;
+            var j = location.x;
+            currentBoard = Program.CopyJaggedArray(originalBoard);
+            record.Clear();
+
+            if (originalBoard[i][j] != '.')
+                continue;
+
+            positionValue = 'X';
+            currentBoard[i][j] = '#';
+            position = this.startPosition;
+            direction = 0;
+            var nextPosition = position;
+            var repeats = 0;
+
+            while (Vector.InBounds(position + directionVector, currentBoard[0].Length - 1, currentBoard.Length - 1))
             {
-                currentBoard = Program.CopyJaggedArray(originalBoard);
-                record.Clear();
-
-                if (originalBoard[i][j] != '.')
-                    continue;
-
-                positionValue = 'X';
-                currentBoard[i][j] = '#';
-                position = this.startPosition;
-                direction = 0;
-                var nextPosition = position;
-
-                while (Vector.InBounds(position + directionVector, currentBoard[0].Length - 1, currentBoard.Length - 1))
+                nextPosition = position + directionVector;
+                if (currentBoard[nextPosition.Y][nextPosition.X] == '#')
                 {
-                    nextPosition = position + directionVector;
-                    if (currentBoard[nextPosition.Y][nextPosition.X] == '#')
+                    var newRecord = new LocationInfo(position.X, position.Y, direction);
+                    if (record.Contains(newRecord))
                     {
-                        direction = (direction + 1) % 4;
-                        var newRecord = new LocationInfo(nextPosition.X, nextPosition.Y, direction);
-                        if (record.Contains(newRecord))
+                        repeats++;
+                        if(repeats > 4)
                         {
                             total++;
                             break;
                         }
-                        else
-                        {
-                            record.Add(newRecord);
-                        }
                     }
-                    position += directionVector;
+                    else
+                    {
+                        record.Add(newRecord);
+                    }
+                    direction = (direction + 1) % 4;
                 }
+                position += directionVector;
             }
+            
         }
 
         Console.WriteLine("Part 2: " + total);

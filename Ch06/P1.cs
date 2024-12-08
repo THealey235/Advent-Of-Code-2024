@@ -43,8 +43,9 @@ public class P1
         };
     }
 
-    public void Run()
+    public List<LocationInfo> Run()
     {
+        var locationsVisited = new List<LocationInfo>();
         positionValue = 'X';
         total++;
         Vector nextPosition = position;
@@ -59,8 +60,12 @@ public class P1
                 continue;
             positionValue = 'X';
             total++;
+            locationsVisited.Add(new LocationInfo(position.X, position.Y, direction));
+
         }
         Console.WriteLine("Part 1: " + total);
+        //does this for part 2
+        return locationsVisited;
     }
 
 }
