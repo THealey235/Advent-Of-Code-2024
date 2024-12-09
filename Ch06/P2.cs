@@ -67,7 +67,7 @@
             var nextPosition = position;
             var repeats = 0;
 
-            while (Vector.InBounds(position + directionVector, currentBoard[0].Length - 1, currentBoard.Length - 1))
+            while (Vector.InBounds(position + directionVector, currentBoard[0].Length - 2, currentBoard.Length - 2))
             {
                 nextPosition = position + directionVector;
                 if (currentBoard[nextPosition.Y][nextPosition.X] == '#')
@@ -93,6 +93,6 @@
             
         }
 
-        Console.WriteLine("Part 2: " + total);
+        Console.WriteLine("Part 2: " + (total));
     }
 }
