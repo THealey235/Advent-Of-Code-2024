@@ -1,10 +1,4 @@
 ﻿
-using System.ComponentModel.DataAnnotations;
-using System.Reflection.Metadata;
-using System.Runtime.CompilerServices;
-using System.Threading.Tasks.Sources;
-using System.Xml.Serialization;
-
 public class P2
 {
     public static void Run(List<char> content)
