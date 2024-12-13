@@ -1,17 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Net.Http.Headers;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿using System.Diagnostics;
 public class Optimized
 {
     public static int _maxBlinks = 75;
     static Dictionary<long, List<long>> cache = new Dictionary<long, List<long>>();
 
-    //with help from robhabraken on github
+    //with help from robhabraken on github, almost all his code but i rewrote it in a way which i prefer
     public static void Run(List<int> content)
     {
         var watch = Stopwatch.StartNew();
