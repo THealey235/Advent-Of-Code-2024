@@ -56,7 +56,6 @@ long Part2(List<Dictionary<string, Dictionary<string, decimal>>> content)
 {
     //I really dislike floating point errors
     var total = 0L;
-    var poten = 1;
     foreach (var machine in content)
     {
         var machineMatrix = Matrix.Create(new decimal[,]
@@ -66,8 +65,8 @@ long Part2(List<Dictionary<string, Dictionary<string, decimal>>> content)
         });
         var prizeMatrix = Matrix.Create(new decimal[,]
         {
-            { machine["Prize"]["X"] * poten},
-            { machine["Prize"]["Y"] * poten}
+            { machine["Prize"]["X"]},
+            { machine["Prize"]["Y"]}
         });
         var abMatrix = machineMatrix.Inverse().Dot(prizeMatrix);
         //trying to account for floating point errors
