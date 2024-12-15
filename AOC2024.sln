@@ -31,6 +31,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AOC Template v3.01", "AOC T
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ch14", "Ch14\Ch14.csproj", "{E8A0B0F0-B65C-47B1-BB11-3B9F924B1209}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ch15", "Ch15\Ch15.csproj", "{B4354D43-1D0B-46DB-A384-533EDC77BE23}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -93,6 +95,10 @@ Global
 		{E8A0B0F0-B65C-47B1-BB11-3B9F924B1209}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E8A0B0F0-B65C-47B1-BB11-3B9F924B1209}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E8A0B0F0-B65C-47B1-BB11-3B9F924B1209}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B4354D43-1D0B-46DB-A384-533EDC77BE23}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4354D43-1D0B-46DB-A384-533EDC77BE23}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4354D43-1D0B-46DB-A384-533EDC77BE23}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4354D43-1D0B-46DB-A384-533EDC77BE23}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
